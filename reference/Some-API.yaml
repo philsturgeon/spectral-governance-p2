@@ -8,13 +8,13 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  '/some-url/{someId}':
+  '/ignoringNamingConventions/{someId}':
     parameters:
       - name: someId
         in: path
         required: true
         schema:
-          type: string
+          type: integer
     get:
       summary: Fetch Collection
       tags: []
@@ -60,13 +60,6 @@ components:
   securitySchemes:
     User-Pass:
       type: http
-      scheme: digest
-  # schemas:
-  #   Foo:
-  #     title: Foo
-  #     type: object
-  #     properties:
-  #       id:
-  #         type: string
+      scheme: basic
 security:
   - API Key: []
